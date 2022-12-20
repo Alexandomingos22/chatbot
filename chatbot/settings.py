@@ -15,7 +15,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool, default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['chatbot.vps-kinghost.net','191.252.212.136','http://chatbot.vps-kinghost.net']
 
 
 # Application definition
