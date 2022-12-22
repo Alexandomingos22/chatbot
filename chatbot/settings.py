@@ -15,7 +15,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool, default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['chatbot.vps-kinghost.net','191.252.212.136','http://chatbot.vps-kinghost.net', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -66,11 +66,15 @@ WSGI_APPLICATION = 'chatbot.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'chatbot.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dojoale',
+        'USER': 'dojoale',
+        'PASSWORD': 'chatbot23',
+        'HOST': 'pgsql21-farm10.kinghost.net',
+        'PORT': '5432',
+
     }
 }
 
@@ -121,3 +125,10 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# HTTPS/SSL
+if not DEBUG:
+        SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+        SECURE_SSL_REDIRECT = True
+        SESSION_COOKIE_SECURE = True
+        CSRF_COOKIE_SECURE = True
