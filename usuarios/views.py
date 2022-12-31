@@ -16,9 +16,8 @@ def login(request):
 def entrar(request):
     user = request.POST.get('user')
     password = request.POST.get('password')
-    user = user.strip()
-    password = password.strip()
-
+    #user = user.strip()
+    #password = password.strip()
     if user == 'ale' and password == '1234':
         global ok
         ok = 1

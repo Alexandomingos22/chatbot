@@ -10,6 +10,7 @@ idna==3.4
 isodate==0.6.1
 lxml==4.9.2
 platformdirs==2.6.0
+psycopg2-binary==2.9.5
 pycep-correios==5.1.0
 python-cep==0.3.0
 python-decouple==3.6
@@ -24,12 +25,3 @@ Unidecode==1.3.6
 urllib3==1.26.13
 validate-docbr==1.10.0
 zeep==4.2.1
-
-pip~=21.3.1
-wheel~=0.37.1
-Pillow~=9.3.0
-Jinja2~=3.1.2
-numpy~=1.23.5
-setuptools~=60.2.0
-cpf~=2.1
-decouple~=0.0.7
