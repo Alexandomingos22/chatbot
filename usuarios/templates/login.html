@@ -12,14 +12,26 @@
     <link rel="stylesheet" href="{% static 'usuarios/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'usuarios/css/media-query.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
     <title>Login</title>
+<style>
+
+i.material-icons{
+     font-size: 48px;
+     color:black;
+
+}
+</style>
+
 </head>
+
 <body>
+      <header>
+          <menu>
+              <ul>
+
+                  <li><a href="/home/"><i class="material-icons">home</i></a></li>
+              </ul>
 
     <main>
         <section id="login">
@@ -28,7 +40,7 @@
              <div id="formulario">
                 <h1>Login</h1>
                 <p>Seja bem-vindo(a) novamente.Faça login para acessar o seu ambiente.</p>
-                        <input type="hidden" id="log" name="log" value="{{log}}">
+
                 <form action="/usuarios/entrar/" method="POST" name="frmUsuariosLogin">{% csrf_token %}
                 <div class="campo">
                     <i class="material-icons" >person</i>
@@ -41,7 +53,7 @@
                     <label for="password">Senha</label>
                 </div>
                 <input type="submit" value="Entrar">
-                 <a href="esqueci.html" class="botao">Esqueci a senha  <i class="material-icons">mail</i></a>
+                 <a href="esqueci.html" class="botao">Esqueci a senha<i class="material-icons">mail</i></a>
             </form>
 
              </div>
@@ -49,17 +61,9 @@
 
 
     </main>
-     <div class="alert alert-danger alert-dismissible" id="alert" style="display: none;">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-               <strong>Acesso NEGADO!</strong>Usuário e/ou senha incorreto(s).
-             </div>
+</menu>
 
-    <script>
-        const log = document.getElementById('log');
-        const alert = document.getElementById('alert');
-        if(log.value>0)
-           alert.style.display = "block";
-        else alert.style.display = "none";
-      </script>
+           </header>
+
 </body>
 </html>

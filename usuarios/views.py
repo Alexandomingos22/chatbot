@@ -11,7 +11,6 @@ def login(request):
     titulo = 'LOGIN'
     return render(request, 'login.html', {'titulo': titulo, 'login': 0})
 
-
 @csrf_protect
 def entrar(request):
     user = request.POST.get('user')

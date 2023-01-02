@@ -1,38 +1,59 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
     <meta http-equiv='cache-control'content='no-cache'>
     <meta http-equiv='expires'content='0'>
     <meta http-equiv='pragma'content='no-cache'>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
 
     <title>ChatBot MHT</title>
+<style>
+
+
+    img {
+
+         margin-top: 5px ;
+}
+</style>
 </head>
-<body>
-      <nav class="navbar navbar-expand-sm bg-dark">
-          <ul class="navbar-nav">
-              <li class="nav-item">
-                  <a class="nav-link" href="/home">ChatBot MHT</a>
-              </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="/usuarios/login/">Login</a>
-              </li>
-          </ul>
-      </nav>
-       <br>
-      <div>
-          <img src="/static/img/frame.png" alt="QRcode para abrir a página em seu smatphone" >
-      </div>
-    <div class="container">
-        <h2>{{titulo}}</h2>
-        <br>
-        <h3 align="center" >Construindo o chatbot logística MHT</h3>
-    </div>
+<body onresize="mudouTamanho()">
+<header>
+      <i id="burguer" class="material-icons" onclick="clickMenu()">menu</i>
+      <menu id="itens">
+        <ul>
+            <li><a href="/usuarios/login/">Login</a></li>
+        </ul>
+
+
+      <img src="/static/home/img/frame.png" height="100"  width="100" align="right" alt="QRcode para abrir no smartphone">
+
+               </menu>
+    </header>
+
+ <script>
+    function mudouTamanho(){
+        if(window.innerWidth >= 768){
+            itens.style.display = 'block'
+        } else{
+            itens.style.display = 'none'
+        }
+
+    }
+
+
+    function clickMenu(){
+        if(itens.style.display == 'block'){
+            itens.style.display = 'none'
+        } else {
+            itens.style.display = 'block'
+        }
+    }
+</script>
 </body>
 </html>

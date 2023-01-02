@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import login, entrar, usuarios, usuario, novo, salvarNovo, edicao, salvarEdicao, delecao, salvarDelecao
+from .views import  login, entrar, usuarios, usuario, novo, salvarNovo, edicao, salvarEdicao, delecao, salvarDelecao
 
 urlpatterns = [
     path('login/', login),
