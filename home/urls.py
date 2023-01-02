@@ -1,6 +1,8 @@
 from django.urls import path
-from .views import home
+from .views import home, tela
 
 urlpatterns = [
-    path('', home)
+    path('', home),
+    path('tela/',tela)
+
 ]

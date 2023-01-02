@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="home/js/tela.js"></script>
+    <link rel="stylesheet" href="{% static 'home/js/tela.js' %}">
+    <title>Change</title>
+</head>
+<body>
+      <div>
+        <h1>Olá! Bem-vindo ao Bot Otimização Logistica</h1>
+      </div>
+    <form>
+      <fieldset>
+        <legend>Opções operacionais</legend>
+
+        <input type="radio" name="opcao" id="ireceb" value="REC" onclick="changeOptions('REC')" checked />
+        <label for="ireceb">Recebimento</label><br><br>
+
+
+        <input type="radio" name="opcao" id="iarm" value="ARM" onclick="changeOptions('ARM')" />
+        <label for="iarm">Armazenagem</label><br><br>
+
+
+        <input type="radio" name="opcao" id="iexp" value="EXP" onclick="changeOptions('EXP')" />
+        <label for="iexp">Expedição</label><br><br>
+
+
+        <input type="radio" name="opcao" id="idev" value="DEV" onclick="changeOptions('DEV')" />
+        <label for="idev">Devolução</label><br><br>
+
+      </fieldset><br>
+
+      <fieldset>
+        <legend>Tipos de processos</legend>
+        <label for="iproc">Processo: </label>
+        <select name="processo" id="iproc">
+          <option value="0">-----</option>
+        </select>
+      </fieldset><br>
+
+      <div>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar">
+      </div>
+    </form>
+</body>
+</html>

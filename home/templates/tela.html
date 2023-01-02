@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+{% load static %}
+{% block 'head' %}{% endblock %}
+{% block 'header' %}{% endblock %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Change</title>
+    <style>
+
+
+    body, html{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding: 120px;
+        position: absolute;
+        width: 900px;
+        height: 600px;
+
+        top: 50%;
+        left: 50%;
+
+        margin-top: -350px;
+        margin-left: -550px;
+        }
+
+        fieldset#operacao {
+           background-color: #5acac6;
+        }
+
+        fieldset#processo {
+           background-color: skyblue;
+        }
+
+        legend.oper{
+        color: black;
+        font-weight: bold;
+        font-size: 21px;
+
+        }
+
+        div.msg {
+            background-color: black;
+            padding: 5px;
+            color: white;
+            border: 2px solid #5f2c82 ;
+            border-radius: 15px;
+            margin: 5px 0px;
+        }
+    </style>
+
+</head>
+<body>
+
+      <div class="msg">
+        <h1>Olá! Bem-vindo ao Bot Otimização Logistica</h1>
+      </div>
+
+    <form>
+      <fieldset class="operacao" id="operacao">
+        <legend class="oper" id="oper">Opções operacionais</legend>
+
+        <input type="radio" name="opcao" id="ireceb" value="REC" onclick="changeOptions('REC')" checked />
+        <label for="ireceb">Recebimento</label>
+
+
+        <input type="radio" name="opcao" id="iarm" value="ARM" onclick="changeOptions('ARM')" />
+        <label for="iarm">Armazenagem</label>
+
+
+        <input type="radio" name="opcao" id="iexp" value="EXP" onclick="changeOptions('EXP')" />
+        <label for="iexp">Expedição</label>
+
+
+        <input type="radio" name="opcao" id="idev" value="DEV" onclick="changeOptions('DEV')" />
+        <label for="idev">Devolução</label>
+
+      </fieldset><br>
+
+      <fieldset class="processo" id="processo">
+        <legend class="oper">Tipos de processos</legend>
+        <label for="iproc">Processo: </label>
+        <select name="processo" id="iproc">
+          <option value="0">-----</option>
+            <option value="A">ASN</option>
+            <option value="I">iLPN</option>
+            <option value="v">VERIFY</option>
+        </select>
+      </fieldset><br>
+
+        <div>
+      <input type="submit" value="Enviar" class="btn btn-primary">
+        <input type="reset" value="Limpar" class="btn btn-primary">
+        </div>
+    </form>
+<script>
+    function changeOptions(opcao) {
+    const options = {
+      REC: {
+
+        0: 'Selecione...',
+        A: 'ASN',
+        I: 'iLPN',
+        V: 'VERIFY'
+      },
+      ARM: {
+        0: 'Selecione...',
+        L: 'LPN',
+        D: 'DROP'
+      },
+      EXP: {
+        0: 'Selecione...',
+        T: 'TESTE',
+        X: 'XTEST'
+      },
+
+      DEV: {
+        0: 'Selecione...',
+        H: 'HTESTE',
+        Y: 'YTEST'
+      },
+
+    }
+
+    const optionsToOpcao = options[opcao]
+
+    const select = document.querySelector('#iproc')
+
+    select.innerHTML = ''
+
+    for (const [value, text] of Object.entries(optionsToOpcao)) {
+      const option = document.createElement('option')
+      option.textContent = text
+      option.value = value
+
+      select.appendChild(option)
+    }
+  }
+
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</body>
+</html>
